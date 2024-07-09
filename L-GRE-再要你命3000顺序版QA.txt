@@ -382,7 +382,7 @@ A: ♣反  wear away, reduction in substance caused by erosion 侵蚀，减少
 A: ♣派  accretion n. 慢慢增加
 
 Q:accumulate  [ə'kju:mjuleit]
-A: ♠考点1 vi. 逐渐增长： to increase gradually in quantity or number
+A: ♠考法1 vi. 逐渐增长： to increase gradually in quantity or number
 A: ♣例  accumulate a fortune 积攒了一笔财富
 A: ♣近  mount, swell, garner, snowball, build up, bulk (up)
 A: ♣反  dissipate, diminish, dwindle, recede, wane 消散，减少
@@ -431,7 +431,7 @@ A: ♣反  benevolent, generous, liberal, philanthropic, munificent 慷慨的
 Q:acrid  ['ækrid]
 A: ♠考法1  adj. 辛辣的，刺鼻的： sharp and harsh or unpleasantly pungent in taste or odor : irritating
 A: ♣例  acrid smell of tobacco 烟草刺鼻的味道
-A: ♠考点2 adj. 刻薄的： marked by the use of wit that is intended to cause hurt feelings
+A: ♠考法2 adj. 刻薄的： marked by the use of wit that is intended to cause hurt feelings
 A: ♣例  acrid temper 刻薄的性情
 A: ♣反  gentle 温和的
 
@@ -7463,7 +7463,7 @@ A: ♠考法1  v. 涂亮漆；使具有光滑或亮泽的表面： to give a glo
 A: ♣近  glaze, varnish
 A: ♣反  efface 抹去
 A: ♠考法2  v. 用亮丽的表面装饰： to adorn with a brightly colored surface
-A: ♣近  adorn, beautify, bedeck, decorate, , embellish, garnish, ornament
+A: ♣近  adorn, beautify, bedeck, decorate, embellish, garnish, ornament
 A: ♣反  disfigure 毁容
 
 Q:enamored  [en'æməd]
@@ -21776,7 +21776,7 @@ Q:turbid  ['tə:bid]
 A: ♠考法1  adj. 混浊的： deficient in clarity or purity
 A: ♣例  a turbid stream 一条混浊的河
 A: ♣近  muddy, murky, obscure
-A: ♣反  clear , limpid, lucid, pellucid, , crystalline 清澈的
+A: ♣反  clear, limpid, lucid, pellucid, crystalline 清澈的
 
 Q:turbulent  ['tə:bjulənt]
 A: ♠考法1  adj. 动荡的： marked by sudden or violent disturbance
