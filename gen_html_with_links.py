@@ -22,6 +22,7 @@ def parse_txt(file_path):
         definitions = []
 
         current_definition = None
+
         for line in lines[1:]:
             if line.startswith('A: ♠考法'):
                 if current_definition:
@@ -32,21 +33,20 @@ def parse_txt(file_path):
                 if type_match:
                     current_definition['type'] = type_match.group(1)
             elif line.startswith('A: ♣例'):
-                current_definition['examples'].append(line.split(' ', 2)[2] if len(line.split(' ', 2))>=3 else '')
+                current_definition['examples'].append(line.split(' ', 2)[2] if len(line.split(' ', 2)) >= 3 else '')
             elif line.startswith('A: ♣近'):
-                current_definition['synonyms'].extend(line.split(' ', 2)[2].split(', '))
+                current_definition['synonyms'].extend(re.split(r',\s*', line.split(' ', 2)[2]))
             elif line.startswith('A: ♣同'):
-                current_definition['related'].extend(line.split(' ', 2)[2].split(', '))
+                current_definition['related'].extend(re.split(r',\s*', line.split(' ', 2)[2]))
             elif line.startswith('A: ♣反'):
-                current_definition['antonyms'].extend(line.split(' ', 2)[2].split(', '))
+                current_definition['antonyms'].extend(re.split(r',\s*', line.split(' ', 2)[2]))
             elif line.startswith('A: ♣派'):
-                current_definition['derivatives'].extend(line.split(' ', 2)[2].split(', '))
+                current_definition['derivatives'].extend(re.split(r',\s*', line.split(' ', 2)[2]))
 
         if current_definition:
             definitions.append(current_definition)
 
         parsed_entries.append({'word': word, 'pronunciation': pronunciation, 'definitions': definitions})
-
 
     return parsed_entries
 
@@ -127,6 +127,15 @@ def generate_html(entries):
             .clickable-word:hover {
                 text-decoration: underline;
             }
+            .synonyms, .antonyms, .related, .derivatives {
+                color: #007700;
+                font-weight: bold;
+            }
+            .examples {
+                color: #cc0000;
+                font-weight: bold;
+            }
+            
             h1 {
                 text-align: center;
                 color: #333;
@@ -155,20 +164,20 @@ def generate_html(entries):
             if definition['examples']:
                 html_content += '<ul>'
                 for example in definition['examples']:
-                    html_content += f'<li>{make_clickable(example)}</li>\n'
+                    html_content += f'<li><span class="examples">例：</span>{make_clickable(example)}</li>\n'
                 html_content += '</ul>'
 
             if definition['synonyms']:
-                html_content += f'<p><strong>近义词：</strong> {", ".join([make_clickable(syn) for syn in definition["synonyms"]])}</p>\n'
+                html_content += f'<p><span class="synonyms">近义词：</span>{", ".join([make_clickable(syn) for syn in definition["synonyms"]])}</p>\n'
             
             if definition['related']:
-                html_content += f'<p><strong>同义词：</strong> {", ".join([make_clickable(rel) for rel in definition["related"]])}</p>\n'
+                html_content += f'<p><span class="related">同义词：</span>{", ".join([make_clickable(rel) for rel in definition["related"]])}</p>\n'
 
             if definition['antonyms']:
-                html_content += f'<p><strong>反义词：</strong> {", ".join([make_clickable(ant) for ant in definition["antonyms"]])}</p>\n'
+                html_content += f'<p><span class="antonyms">反义词：</span>{", ".join([make_clickable(ant) for ant in definition["antonyms"]])}</p>\n'
             
             if definition['derivatives']:
-                html_content += f'<p><strong>派生词：</strong> {", ".join([make_clickable(der) for der in definition["derivatives"]])}</p>\n'
+                html_content += f'<p><span class="derivatives">派生词：</span>{", ".join([make_clickable(der) for der in definition["derivatives"]])}</p>\n'
 
             html_content += '</div>\n'
 
