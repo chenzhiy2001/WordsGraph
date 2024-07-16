@@ -73,7 +73,7 @@ def generate_html(entries):
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>词条词典</title>
+        <title>GRE - 再要你命3000</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -102,6 +102,7 @@ def generate_html(entries):
         </style>
     </head>
     <body>
+        <h1>再要你命3000可点击版 by czy</h1>
         <div class="word-list">
     '''
 
